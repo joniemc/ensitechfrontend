@@ -21,7 +21,7 @@ export class LoginService {
     this.http.post(url, body, { observe: 'response' }).subscribe((response: any) => {
       const bearerToken = response.headers.get('Authorization'); 
       let token = bearerToken.replace(/Bearer /g,'');
-      console.log(token);
+      
       localStorage.setItem('token',token);
     });
   }
